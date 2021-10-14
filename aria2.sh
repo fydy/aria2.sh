@@ -14,7 +14,7 @@
 
 sh_ver="2.7.4"
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:/bin
-aria2_conf_dir="/home/runner/.aria2"
+aria2_conf_dir="/home/runner/.aria2c"
 download_path="/home/runner/work/dk/dk/test"
 aria2_conf="${aria2_conf_dir}/aria2.conf"
 aria2_log="${aria2_conf_dir}/aria2.log"
