@@ -14,11 +14,11 @@
 
 sh_ver="2.7.4"
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:/bin
-aria2_conf_dir="/home/runner/work/dk/dk/aria2/.aria2c"
+aria2_conf_dir="/home/runner/.aria2c"
 download_path="/home/runner/work/dk/dk/test"
 aria2_conf="${aria2_conf_dir}/aria2.conf"
 aria2_log="${aria2_conf_dir}/aria2.log"
-aria2c="/usr/local/bin/aria2c"
+aria2c="/usr/bin/aria2c"
 Crontab_file="/usr/bin/crontab"
 Green_font_prefix="\033[32m"
 Red_font_prefix="\033[31m"
@@ -131,7 +131,7 @@ Download_aria2() {
 Download_aria2_conf() {
     PROFILE_URL1="https://p3terx.github.io/aria2.conf"
     PROFILE_URL2="https://aria2c.now.sh"
-    PROFILE_URL3="https://cdn.jsdelivr.net/gh/P3TERX/aria2.conf@master"
+    PROFILE_URL3="https://cdn.jsdelivr.net/gh/fydy/aria2.conf@master"
     PROFILE_LIST="
 aria2.conf
 clean.sh
@@ -158,7 +158,7 @@ LICENSE
         }
     done
     sed -i "s@^\(dir=\).*@\1${download_path}@" ${aria2_conf}
-    sed -i "s@//home/runner/work/dk/dk/@${aria2_conf_dir}/@" ${aria2_conf_dir}/*.conf
+    sed -i "s@/home/runner/.aria2/@${aria2_conf_dir}/@" ${aria2_conf_dir}/*.conf
     sed -i "s@^\(rpc-secret=\).*@\1$(date +%s%N | md5sum | head -c 20)@" ${aria2_conf}
     sed -i "s@^#\(retry-on-.*=\).*@\1true@" ${aria2_conf}
     sed -i "s@^\(max-connection-per-server=\).*@\132@" ${aria2_conf}
