@@ -168,9 +168,9 @@ LICENSE
 }
 Service_aria2() {
     if [[ ${release} = "centos" ]]; then
-        wget -N -t2 -T3 "https://raw.githubusercontent.com/P3TERX/aria2.sh/master/service/aria2_centos" -O /etc/init.d/aria2 ||
-            wget -N -t2 -T3 "https://cdn.jsdelivr.net/gh/P3TERX/aria2.sh@master/service/aria2_centos" -O /etc/init.d/aria2 ||
-            wget -N -t2 -T3 "https://gh-raw.p3terx.com/P3TERX/aria2.sh/master/service/aria2_centos" -O /etc/init.d/aria2
+        wget -N -t2 -T3 "https://raw.githubusercontent.com/fydy/aria2.sh/master/service/aria2_centos" -O /etc/init.d/aria2 ||
+            wget -N -t2 -T3 "https://cdn.jsdelivr.net/gh/fydy/aria2.sh@master/service/aria2_centos" -O /etc/init.d/aria2 ||
+            wget -N -t2 -T3 "https://gh-raw.p3terx.com/fydy/aria2.sh/master/service/aria2_centos" -O /etc/init.d/aria2
         [[ ! -s /etc/init.d/aria2 ]] && {
             echo -e "${Error} Aria2服务 管理脚本下载失败 !"
             exit 1
@@ -179,9 +179,9 @@ Service_aria2() {
         chkconfig --add aria2
         chkconfig aria2 on
     else
-        wget -N -t2 -T3 "https://raw.githubusercontent.com/P3TERX/aria2.sh/master/service/aria2_debian" -O /etc/init.d/aria2 ||
-            wget -N -t2 -T3 "https://cdn.jsdelivr.net/gh/P3TERX/aria2.sh@master/service/aria2_debian" -O /etc/init.d/aria2 ||
-            wget -N -t2 -T3 "https://gh-raw.p3terx.com/P3TERX/aria2.sh/master/service/aria2_debian" -O /etc/init.d/aria2
+        wget -N -t2 -T3 "https://raw.githubusercontent.com/fydy/aria2.sh/master/service/aria2_debian" -O /etc/init.d/aria2 ||
+            wget -N -t2 -T3 "https://cdn.jsdelivr.net/gh/fydy/aria2.sh@master/service/aria2_debian" -O /etc/init.d/aria2 ||
+            wget -N -t2 -T3 "https://gh-raw.p3terx.com/fydy/aria2.sh/master/service/aria2_debian" -O /etc/init.d/aria2
         [[ ! -s /etc/init.d/aria2 ]] && {
             echo -e "${Error} Aria2服务 管理脚本下载失败 !"
             exit 1
